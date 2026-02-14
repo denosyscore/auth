@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authorization\Voter;
+namespace Denosys\Auth\Authorization\Voter;
 
-use CFXP\Core\Auth\Authorization\Decision;
-use CFXP\Core\Auth\Identity\IdentityInterface;
+use Denosys\Auth\Authorization\Decision;
+use Denosys\Auth\Identity\IdentityInterface;
 
 class RoleVoter implements VoterInterface
 {

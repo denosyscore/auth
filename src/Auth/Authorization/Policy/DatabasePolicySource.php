@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authorization\Policy;
+namespace Denosys\Auth\Authorization\Policy;
 
-use CFXP\Core\Database\Connection\Connection;
+use Denosys\Database\Connection\Connection;
 
 class DatabasePolicySource implements PolicySourceInterface
 {

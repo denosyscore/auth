@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authorization\Policy;
+namespace Denosys\Auth\Authorization\Policy;
 
 class PolicyBuilder
 {

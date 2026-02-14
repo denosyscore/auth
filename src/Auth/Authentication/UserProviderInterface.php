@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authentication;
+namespace Denosys\Auth\Authentication;
 
-use CFXP\Core\Auth\Identity\AuthenticatableInterface;
+use Denosys\Auth\Identity\AuthenticatableInterface;
 
 interface UserProviderInterface
 {

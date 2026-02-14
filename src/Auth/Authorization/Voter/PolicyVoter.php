@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authorization\Voter;
+namespace Denosys\Auth\Authorization\Voter;
 
-use CFXP\Core\Auth\Authorization\Decision;
-use CFXP\Core\Auth\Authorization\Policy\PolicyLoader;
-use CFXP\Core\Auth\Identity\IdentityInterface;
+use Denosys\Auth\Authorization\Decision;
+use Denosys\Auth\Authorization\Policy\PolicyLoader;
+use Denosys\Auth\Identity\IdentityInterface;
 
 class PolicyVoter implements VoterInterface
 {

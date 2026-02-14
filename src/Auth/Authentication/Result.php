@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authentication;
+namespace Denosys\Auth\Authentication;
 
-use CFXP\Core\Auth\Identity\IdentityInterface;
-use CFXP\Core\Auth\Identity\AuthenticatableInterface;
+use Denosys\Auth\Identity\IdentityInterface;
+use Denosys\Auth\Identity\AuthenticatableInterface;
 
 final class Result
 {

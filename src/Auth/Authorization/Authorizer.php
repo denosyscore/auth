@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authorization;
+namespace Denosys\Auth\Authorization;
 
-use CFXP\Core\Auth\Authorization\Voter\VoterInterface;
-use CFXP\Core\Auth\Identity\IdentityInterface;
+use Denosys\Auth\Authorization\Voter\VoterInterface;
+use Denosys\Auth\Identity\IdentityInterface;
 
 class Authorizer
 {

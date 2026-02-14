@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authentication\Credential;
+namespace Denosys\Auth\Authentication\Credential;
 
 interface CredentialInterface
 {

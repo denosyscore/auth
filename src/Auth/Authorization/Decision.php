@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authorization;
+namespace Denosys\Auth\Authorization;
 
 enum Decision: string
 {

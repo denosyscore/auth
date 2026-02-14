@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth;
+namespace Denosys\Auth;
 
-use CFXP\Core\Auth\Authentication\Authenticator;
-use CFXP\Core\Auth\Authentication\ModelUserProvider;
-use CFXP\Core\Auth\Authentication\UserProviderInterface;
-use CFXP\Core\Auth\Authentication\Strategy\PasswordStrategy;
-use CFXP\Core\Auth\Middleware\AuthenticateMiddleware;
-use CFXP\Core\Container\ContainerInterface;
-use CFXP\Core\Http\ResponseFactory;
-use CFXP\Core\ServiceProviderInterface;
-use CFXP\Core\Session\SessionInterface;
+use Denosys\Auth\Authentication\Authenticator;
+use Denosys\Auth\Authentication\ModelUserProvider;
+use Denosys\Auth\Authentication\UserProviderInterface;
+use Denosys\Auth\Authentication\Strategy\PasswordStrategy;
+use Denosys\Auth\Middleware\AuthenticateMiddleware;
+use Denosys\Container\ContainerInterface;
+use Denosys\Http\ResponseFactory;
+use Denosys\Contracts\ServiceProviderInterface;
+use Denosys\Session\SessionInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 use RuntimeException;
 

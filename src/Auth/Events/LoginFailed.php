@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Events;
+namespace Denosys\Auth\Events;
 
 /**
  * Event dispatched when a login attempt fails.

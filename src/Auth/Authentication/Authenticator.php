@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authentication;
+namespace Denosys\Auth\Authentication;
 
-use CFXP\Core\Auth\Authentication\Credential\CredentialInterface;
-use CFXP\Core\Auth\Authentication\Credential\PasswordCredential;
-use CFXP\Core\Auth\Authentication\Strategy\StrategyInterface;
-use CFXP\Core\Auth\Identity\IdentityInterface;
-use CFXP\Core\Auth\Identity\AnonymousIdentity;
-use CFXP\Core\Auth\Identity\AuthenticatableInterface;
-use CFXP\Core\Auth\Events\UserAuthenticated;
-use CFXP\Core\Auth\Events\LoginFailed;
-use CFXP\Core\Auth\Events\Logout;
-use CFXP\Core\Session\SessionInterface;
+use Denosys\Auth\Authentication\Credential\CredentialInterface;
+use Denosys\Auth\Authentication\Credential\PasswordCredential;
+use Denosys\Auth\Authentication\Strategy\StrategyInterface;
+use Denosys\Auth\Identity\IdentityInterface;
+use Denosys\Auth\Identity\AnonymousIdentity;
+use Denosys\Auth\Identity\AuthenticatableInterface;
+use Denosys\Auth\Events\UserAuthenticated;
+use Denosys\Auth\Events\LoginFailed;
+use Denosys\Auth\Events\Logout;
+use Denosys\Session\SessionInterface;
 use Psr\EventDispatcher\EventDispatcherInterface;
 
 class Authenticator
@@ -119,7 +119,7 @@ private array $strategies = [];
             return false;
         }
 
-        $identity = \CFXP\Core\Auth\Identity\Identity::fromAuthenticatable($user);
+        $identity = \Denosys\Auth\Identity\Identity::fromAuthenticatable($user);
         $this->login($identity, $user);
 
         return true;
@@ -238,7 +238,7 @@ private array $strategies = [];
         }
 
         $this->user = $user;
-        $this->identity = \CFXP\Core\Auth\Identity\Identity::fromAuthenticatable($user);
+        $this->identity = \Denosys\Auth\Identity\Identity::fromAuthenticatable($user);
     }
 
     /**

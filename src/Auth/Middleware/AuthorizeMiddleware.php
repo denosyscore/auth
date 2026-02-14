@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Middleware;
+namespace Denosys\Auth\Middleware;
 
-use CFXP\Core\Auth\Authentication\Authenticator;
-use CFXP\Core\Auth\Authorization\Authorizer;
-use CFXP\Core\Http\ResponseFactory;
+use Denosys\Auth\Authentication\Authenticator;
+use Denosys\Auth\Authorization\Authorizer;
+use Denosys\Http\ResponseFactory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Identity;
+namespace Denosys\Auth\Identity;
 
 interface AuthenticatableInterface
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace CFXP\Core\Auth\Authentication\Strategy;
+namespace Denosys\Auth\Authentication\Strategy;
 
-use CFXP\Core\Auth\Authentication\Credential\CredentialInterface;
-use CFXP\Core\Auth\Authentication\Result;
+use Denosys\Auth\Authentication\Credential\CredentialInterface;
+use Denosys\Auth\Authentication\Result;
 
 interface StrategyInterface
 {
