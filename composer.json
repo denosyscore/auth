@@ -5,14 +5,27 @@
   "license": "MIT",
   "require": {
     "php": "^8.2",
+    "denosyscore/container": "^0.2",
+    "denosyscore/contracts": "^0.2",
     "denosyscore/database": "^0.2",
     "denosyscore/http": "^0.2",
-    "denosyscore/session": "^0.2"
+    "denosyscore/session": "^0.2",
+    "psr/event-dispatcher": "^1.0",
+    "psr/http-message": "^2.0",
+    "psr/http-server-handler": "^1.0",
+    "psr/http-server-middleware": "^1.0"
+  },
+  "require-dev": {
+    "laminas/laminas-diactoros": "^3.6",
+    "phpunit/phpunit": "^10.5"
   },
   "autoload": {
     "psr-4": {
       "Denosys\\Auth\\": "src/Auth/"
     }
+  },
+  "scripts": {
+    "test": "phpunit"
   },
   "config": {
     "sort-packages": true

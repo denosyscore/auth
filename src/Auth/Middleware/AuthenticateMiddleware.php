@@ -25,15 +25,12 @@ class AuthenticateMiddleware implements MiddlewareInterface
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         if ($this->authenticator->check()) {
-            // Set the authenticated user on the request object
-            if ($request instanceof Request) {
-                $request = $request->withUser($this->authenticator->user());
-                
-                // Re-bind the updated request to container
-                $this->container->instance(ServerRequestInterface::class, $request);
-                $this->container->instance(Request::class, $request);
-            }
-            
+            $request = ($request instanceof Request ? $request : Request::createFromPsr7($request))
+                ->withUser($this->authenticator->user());
+
+            $this->container->instance(ServerRequestInterface::class, $request);
+            $this->container->instance(Request::class, $request);
+
             return $handler->handle($request);
         }
 
