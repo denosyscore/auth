@@ -39,7 +39,7 @@ final class AuthenticateMiddlewareTest extends TestCase
         $request = new ServerRequest([], [], 'https://example.test/office', 'POST');
         $request = $request->withAttribute('trace', 'retained')->withParsedBody(['field' => 'value']);
 
-        $response = new AuthenticateMiddleware($authenticator, new ResponseFactory(), $container)
+        $response = (new AuthenticateMiddleware($authenticator, new ResponseFactory(), $container))
             ->process($request, $handler);
 
         self::assertSame(200, $response->getStatusCode());
@@ -67,7 +67,7 @@ final class AuthenticateMiddlewareTest extends TestCase
             }
         };
 
-        $response = new AuthenticateMiddleware($authenticator, new ResponseFactory(), new Container())
+        $response = (new AuthenticateMiddleware($authenticator, new ResponseFactory(), new Container()))
             ->process(new ServerRequest([], [], 'https://example.test/office', 'GET'), $handler);
 
         self::assertSame(401, $response->getStatusCode());
