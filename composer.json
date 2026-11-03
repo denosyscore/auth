@@ -8,6 +8,7 @@
     "denosyscore/container": "^0.2",
     "denosyscore/contracts": "^0.2",
     "denosyscore/database": "^0.2",
+    "denosyscore/encryption": "^0.2",
     "denosyscore/http": "^0.2",
     "denosyscore/session": "^0.2",
     "psr/event-dispatcher": "^1.0",
