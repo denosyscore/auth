@@ -57,3 +57,11 @@ composer test
   authentication regression tests on push and pull requests.
 - Release: GitHub release publication on semantic version tags.
 - Dependabot: weekly Composer dependency update checks.
+
+## Releases
+
+CI tests the existing database/HTTP/session combination and the new 0.3
+database/HTTP combination on PHP 8.2 and 8.5. After CI passes on `main`,
+create an annotated semantic version tag from that reviewed commit and push
+it. The Release workflow publishes a GitHub Release. Confirm the matching
+version is available in the Composer package index before updating consumers.
