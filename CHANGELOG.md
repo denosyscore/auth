@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## Unreleased (proposed 0.3.0)
+
+- Accept database and HTTP 0.3 while retaining their supported 0.2 lines.
+- Add opt-in encrypted remember-cookie middleware for issuance, restoration,
+  revocation, and logout handling without changing the default web stack.
 
 - Propagate the authenticated user through any PSR-7 request by forwarding a
   PSR-compatible HTTP request wrapper. Existing wrapped-request and
