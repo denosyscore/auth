@@ -18,7 +18,8 @@
   },
   "require-dev": {
     "laminas/laminas-diactoros": "^3.6",
-    "phpunit/phpunit": "^10.5"
+    "phpunit/phpunit": "^10.5",
+    "phpstan/phpstan": "^2.1"
   },
   "autoload": {
     "psr-4": {
@@ -26,7 +27,8 @@
     }
   },
   "scripts": {
-    "test": "phpunit"
+    "test": "phpunit",
+    "analyse": "phpstan analyse --no-progress --memory-limit=1G"
   },
   "config": {
     "sort-packages": true
