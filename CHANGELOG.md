@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.3 – 2026-11-11
+
+- Accept `denosyscore/http` 0.4, which removes classes this package never used.
+  CI tests it with database 0.5.0 and session 0.2.6.
+
 ## 0.3.2 – 2026-11-11
 
 - Accept `denosyscore/database` 0.5. The test suite passes against 0.5.0, and CI
