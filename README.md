@@ -2,13 +2,86 @@
 
 Authentication and authorization components
 
-## Status
-
-Initial extraction snapshot from denosyscore monorepo as of 2026-02-14.
-
 ## Installation
 
+```bash
 composer require denosyscore/auth
+```
+
+## Quick start
+
+Log users in with a password strategy. Supply a user provider for your storage; the session keeps the login.
+
+<!-- quickstart -->
+```php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Denosys\Auth\Authentication\Authenticator;
+use Denosys\Auth\Authentication\Credential\PasswordCredential;
+use Denosys\Auth\Authentication\Strategy\PasswordStrategy;
+use Denosys\Auth\Authentication\UserProviderInterface;
+use Denosys\Auth\Identity\AuthenticatableInterface;
+use Denosys\Session\Handlers\ArraySessionHandler;
+use Denosys\Session\Store;
+
+final class User implements AuthenticatableInterface
+{
+    public ?string $rememberToken = null;
+
+    public function __construct(public int $id, public string $email, public string $passwordHash) {}
+
+    public function getAuthIdentifier(): int { return $this->id; }
+    public function getAuthIdentifierName(): string { return 'id'; }
+    public function getAuthPassword(): string { return $this->passwordHash; }
+    public function getRememberToken(): ?string { return $this->rememberToken; }
+    public function setRememberToken(string $token): void { $this->rememberToken = $token; }
+    public function getRememberTokenName(): string { return 'remember_token'; }
+    public function getAuthClaims(): array { return ['id' => $this->id, 'email' => $this->email]; }
+}
+
+// Tell the authenticator how to find users; in an application this reads the database.
+final class InMemoryUsers implements UserProviderInterface
+{
+    /** @param array<int, User> $users */
+    public function __construct(private array $users) {}
+
+    public function findById(string|int $id): ?AuthenticatableInterface { return $this->users[$id] ?? null; }
+
+    public function findByCredential(string $field, string $value): ?AuthenticatableInterface
+    {
+        foreach ($this->users as $user) {
+            if ($field === 'email' && $user->email === $value) {
+                return $user;
+            }
+        }
+        return null;
+    }
+
+    public function findByRememberToken(string|int $id, string $token): ?AuthenticatableInterface { return null; }
+    public function updateRememberToken(AuthenticatableInterface $user, string $token): void {}
+    public function validatePassword(AuthenticatableInterface $user, string $password): bool
+    {
+        return password_verify($password, $user->getAuthPassword());
+    }
+    public function rehashPasswordIfRequired(AuthenticatableInterface $user, string $password): void {}
+}
+
+$users = new InMemoryUsers([1 => new User(1, 'ada@example.com', password_hash('secret', PASSWORD_DEFAULT))]);
+$session = new Store('app_session', new ArraySessionHandler());
+$session->start();
+
+$auth = new Authenticator($session, $users);
+$auth->addStrategy(new PasswordStrategy($users, identifierField: 'email'));
+
+var_dump($auth->attempt(new PasswordCredential('ada@example.com', 'wrong'))->isSuccess());  // bool(false)
+var_dump($auth->attempt(new PasswordCredential('ada@example.com', 'secret'))->isSuccess()); // bool(true)
+echo $auth->user()->getAuthClaims()['email'], "\n";  // ada@example.com
+
+$auth->logout();
+var_dump($auth->guest());  // bool(true)
+```
 
 ## Included Modules
 
