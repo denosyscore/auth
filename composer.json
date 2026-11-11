@@ -9,7 +9,7 @@
     "denosyscore/contracts": "^0.2",
     "denosyscore/database": "^0.2 || ^0.3 || ^0.4 || ^0.5",
     "denosyscore/encryption": "^0.2",
-    "denosyscore/http": "^0.2 || ^0.3",
+    "denosyscore/http": "^0.2 || ^0.3 || ^0.4",
     "denosyscore/session": "^0.2",
     "psr/event-dispatcher": "^1.0",
     "psr/http-message": "^2.0",
