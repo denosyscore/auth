@@ -1,6 +1,11 @@
 # Changelog
 
-## Unreleased (proposed 0.3.1)
+## 0.3.2 – 2026-11-11
+
+- Accept `denosyscore/database` 0.5. The test suite passes against 0.5.0, and CI
+  tests it alongside the matching HTTP and dependent package releases.
+
+## 0.3.1
 
 - Accept database 0.4 while retaining the supported 0.2 and 0.3 lines.
 - Test database 0.4 with compatible HTTP and session releases in CI.
