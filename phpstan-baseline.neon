@@ -1,0 +1,433 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot call method get\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 10
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$authenticator of class Denosys\\Auth\\Middleware\\AuthenticateMiddleware constructor expects Denosys\\Auth\\Authentication\\Authenticator, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$authenticator of class Denosys\\Auth\\Middleware\\GuestMiddleware constructor expects Denosys\\Auth\\Authentication\\Authenticator, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$authenticator of class Denosys\\Auth\\Middleware\\RememberCookieMiddleware constructor expects Denosys\\Auth\\Authentication\\Authenticator, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$modelClass of class Denosys\\Auth\\Authentication\\ModelUserProvider constructor expects class\-string\<Denosys\\Auth\\Identity\\AuthenticatableInterface&Denosys\\Database\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$session of class Denosys\\Auth\\Authentication\\Authenticator constructor expects Denosys\\Session\\SessionInterface, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$strategy of method Denosys\\Auth\\Authentication\\Authenticator\:\:addStrategy\(\) expects Denosys\\Auth\\Authentication\\Strategy\\StrategyInterface, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$userProvider of class Denosys\\Auth\\Authentication\\Strategy\\PasswordStrategy constructor expects Denosys\\Auth\\Authentication\\UserProviderInterface, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#2 \$identifierField of class Denosys\\Auth\\Authentication\\ModelUserProvider constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#2 \$responseFactory of class Denosys\\Auth\\Middleware\\AuthenticateMiddleware constructor expects Denosys\\Http\\ResponseFactory, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#2 \$responseFactory of class Denosys\\Auth\\Middleware\\GuestMiddleware constructor expects Denosys\\Http\\ResponseFactory, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#2 \$userProvider of class Denosys\\Auth\\Authentication\\Authenticator constructor expects Denosys\\Auth\\Authentication\\UserProviderInterface, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#2 \$users of class Denosys\\Auth\\Middleware\\RememberCookieMiddleware constructor expects Denosys\\Auth\\Authentication\\UserProviderInterface, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#3 \$container of class Denosys\\Auth\\Middleware\\AuthenticateMiddleware constructor expects Denosys\\Container\\Container, Denosys\\Container\\ContainerInterface given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#3 \$dispatcher of class Denosys\\Auth\\Authentication\\Authenticator constructor expects Psr\\EventDispatcher\\EventDispatcherInterface\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#3 \$redirectTo of class Denosys\\Auth\\Middleware\\GuestMiddleware constructor expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#3 \$session of class Denosys\\Auth\\Middleware\\RememberCookieMiddleware constructor expects Denosys\\Session\\SessionInterface, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#4 \$encrypter of class Denosys\\Auth\\Middleware\\RememberCookieMiddleware constructor expects Denosys\\Encryption\\EncrypterInterface, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#4 \$redirectTo of class Denosys\\Auth\\Middleware\\AuthenticateMiddleware constructor expects string\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#6 \$canRestore of class Denosys\\Auth\\Middleware\\RememberCookieMiddleware constructor expects \(callable\(Denosys\\Auth\\Identity\\AuthenticatableInterface\)\: bool\)\|null, array\{mixed, ''allows''\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \$cookieName of class Denosys\\Auth\\Middleware\\RememberCookieOptions constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \$lifetimeSeconds of class Denosys\\Auth\\Middleware\\RememberCookieOptions constructor expects int, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \$loginPath of class Denosys\\Auth\\Middleware\\RememberCookieOptions constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \$logoutPath of class Denosys\\Auth\\Middleware\\RememberCookieOptions constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \$sameSite of class Denosys\\Auth\\Middleware\\RememberCookieOptions constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \$secure of class Denosys\\Auth\\Middleware\\RememberCookieOptions constructor expects bool\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/AuthServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$id of method Denosys\\Auth\\Authentication\\UserProviderInterface\:\:findById\(\) expects int\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Parameter \#1 \$identity of method Denosys\\Auth\\Authentication\\Authenticator\:\:login\(\) expects Denosys\\Auth\\Identity\\IdentityInterface, Denosys\\Auth\\Identity\\IdentityInterface\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Parameter \#1 \$user of class Denosys\\Auth\\Events\\UserAuthenticated constructor expects Denosys\\Auth\\Identity\\AuthenticatableInterface, Denosys\\Auth\\Identity\\AuthenticatableInterface\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Parameter \#1 \$user of method Denosys\\Auth\\Authentication\\Authenticator\:\:createRememberToken\(\) expects Denosys\\Auth\\Identity\\AuthenticatableInterface, Denosys\\Auth\\Identity\\AuthenticatableInterface\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Parameter \#1 \$user of method Denosys\\Auth\\Authentication\\UserProviderInterface\:\:updateRememberToken\(\) expects Denosys\\Auth\\Identity\\AuthenticatableInterface, Denosys\\Auth\\Identity\\AuthenticatableInterface\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Parameter \#2 \$identity of class Denosys\\Auth\\Events\\UserAuthenticated constructor expects Denosys\\Auth\\Identity\\IdentityInterface, Denosys\\Auth\\Identity\\IdentityInterface\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Parameter \#2 \$user of method Denosys\\Auth\\Authentication\\Authenticator\:\:login\(\) expects Denosys\\Auth\\Identity\\AuthenticatableInterface, Denosys\\Auth\\Identity\\AuthenticatableInterface\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Parameter \#3 \$remember of class Denosys\\Auth\\Events\\UserAuthenticated constructor expects bool, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authentication/Authenticator.php
+
+		-
+			message: '#^Cannot call method supports\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Cannot call method vote\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Comparison operation "\>" between 0 and 0 is always false\.$#'
+			identifier: greater.alwaysFalse
+			count: 2
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Method Denosys\\Auth\\Authorization\\Authorizer\:\:collectVotes\(\) should return array\<string, mixed\> but returns list\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Parameter \#1 \$decisions of method Denosys\\Auth\\Authorization\\Authorizer\:\:decideAffirmative\(\) expects array\<string, bool\>, array\<string, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Parameter \#1 \$decisions of method Denosys\\Auth\\Authorization\\Authorizer\:\:decideConsensus\(\) expects array\<string, bool\>, array\<string, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Parameter \#1 \$decisions of method Denosys\\Auth\\Authorization\\Authorizer\:\:decideUnanimous\(\) expects array\<string, bool\>, array\<string, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Property Denosys\\Auth\\Authorization\\Authorizer\:\:\$voters \(array\<string, mixed\>\) does not accept array\<int\|string, mixed\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Result of && is always true\.$#'
+			identifier: booleanAnd.alwaysTrue
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between 0 and 0 will always evaluate to true\.$#'
+			identifier: identical.alwaysTrue
+			count: 2
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between bool and Denosys\\Auth\\Authorization\\Decision\:\:ALLOW will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 3
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between bool and Denosys\\Auth\\Authorization\\Decision\:\:DENY will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 3
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: src/Auth/Authorization/Authorizer.php
+
+		-
+			message: '#^Method Denosys\\Auth\\Authorization\\Policy\\ConfigPolicySource\:\:load\(\) should return array\<string, mixed\> but returns list\<Denosys\\Auth\\Authorization\\Policy\\Policy\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Auth/Authorization/Policy/ConfigPolicySource.php
+
+		-
+			message: '#^Parameter \#1 \$data of static method Denosys\\Auth\\Authorization\\Policy\\Policy\:\:fromArray\(\) expects array\<string, mixed\>, array\<mixed, mixed\> given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/ConfigPolicySource.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
+			path: src/Auth/Authorization/Policy/DatabasePolicySource.php
+
+		-
+			message: '#^Method Denosys\\Auth\\Authorization\\Policy\\DatabasePolicySource\:\:load\(\) should return array\<string, mixed\> but returns list\<Denosys\\Auth\\Authorization\\Policy\\Policy\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Auth/Authorization/Policy/DatabasePolicySource.php
+
+		-
+			message: '#^Parameter \$action of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects array\<string, mixed\>\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/DatabasePolicySource.php
+
+		-
+			message: '#^Parameter \$effect of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/DatabasePolicySource.php
+
+		-
+			message: '#^Parameter \$resource of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/DatabasePolicySource.php
+
+		-
+			message: '#^Parameter \$subject of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/DatabasePolicySource.php
+
+		-
+			message: '#^Parameter \$action of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects array\<string, mixed\>\|string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/Policy.php
+
+		-
+			message: '#^Parameter \$condition of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects Closure\|null, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/Policy.php
+
+		-
+			message: '#^Parameter \$effect of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/Policy.php
+
+		-
+			message: '#^Parameter \$priority of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects int, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/Policy.php
+
+		-
+			message: '#^Parameter \$resource of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/Policy.php
+
+		-
+			message: '#^Parameter \$subject of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/Policy.php
+
+		-
+			message: '#^Parameter \$action of class Denosys\\Auth\\Authorization\\Policy\\Policy constructor expects array\<string, mixed\>\|string, array\<string\>\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Policy/PolicyBuilder.php
+
+		-
+			message: '#^Method Denosys\\Auth\\Authorization\\Voter\\OwnershipVoter\:\:getOwnerId\(\) should return int\|string\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 4
+			path: src/Auth/Authorization/Voter/OwnershipVoter.php
+
+		-
+			message: '#^Parameter \#1 \$subject of method Denosys\\Auth\\Authorization\\Voter\\OwnershipVoter\:\:getOwnerId\(\) expects object, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Authorization/Voter/OwnershipVoter.php
+
+		-
+			message: '#^Method Denosys\\Auth\\Authorization\\Voter\\PolicyVoter\:\:getResourceType\(\) should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 2
+			path: src/Auth/Authorization/Voter/PolicyVoter.php
+
+		-
+			message: '#^Method Denosys\\Auth\\Identity\\AnonymousIdentity\:\:getId\(\) never returns string so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Auth/Identity/AnonymousIdentity.php
+
+		-
+			message: '#^Trait Denosys\\Auth\\Identity\\Authenticatable is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Auth/Identity/Authenticatable.php
+
+		-
+			message: '#^Method Denosys\\Auth\\Identity\\Identity\:\:getRoles\(\) should return array\<string\> but returns array\<mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: src/Auth/Identity/Identity.php
+
+		-
+			message: '#^Function route not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: src/Auth/Middleware/AuthenticateMiddleware.php
+
+		-
+			message: '#^Parameter \#1 \$url of method Denosys\\Http\\ResponseFactory\:\:redirect\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Middleware/AuthenticateMiddleware.php
+
+		-
+			message: '#^Function route not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: src/Auth/Middleware/GuestMiddleware.php
+
+		-
+			message: '#^Parameter \#1 \$url of method Denosys\\Http\\ResponseFactory\:\:redirect\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Auth/Middleware/GuestMiddleware.php
