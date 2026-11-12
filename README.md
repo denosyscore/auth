@@ -1,5 +1,7 @@
 # denosyscore/auth
 
+> **Read-only split.** This package is developed in [denosyscore/framework](https://github.com/denosyscore/framework) under `packages/auth`. Open issues and pull requests there.
+
 Authentication and authorization components
 
 ## Installation
@@ -124,12 +126,6 @@ composer validate --strict
 find src tests -type f -name '*.php' -print0 | xargs -0 -n1 php -l
 composer test
 
-## CI Workflows
-
-- CI: Composer validation, isolated installation, PHP syntax lint, and
-  authentication regression tests on push and pull requests.
-- Release: GitHub release publication on semantic version tags.
-- Dependabot: weekly Composer dependency update checks.
 
 ## Releases
 
