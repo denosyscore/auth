@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Denosys\Auth\Tests;
 
 use Denosys\Auth\Authentication\Authenticator;
-use Denosys\Auth\AuthServiceProvider;
 use Denosys\Auth\Authentication\UserProviderInterface;
 use Denosys\Auth\Identity\AuthenticatableInterface;
 use Denosys\Auth\Identity\Identity;
@@ -27,33 +26,6 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 final class RememberCookieMiddlewareTest extends TestCase
 {
-    public function testServiceProviderBindsOptInMiddlewareWithoutEnablingItGlobally(): void
-    {
-        $container = new Container();
-        $container->instance('config', new class {
-            public function get(string $key, mixed $default = null): mixed
-            {
-                return $key === 'auth.remember.cookie_name' ? 'custom_remember' : $default;
-            }
-        });
-        $session = $this->session();
-        $user = new RememberTestUser();
-        $container->instance(SessionInterface::class, $session);
-        $container->instance(EncrypterInterface::class, new Encrypter(base64_encode(random_bytes(32))));
-
-        (new AuthServiceProvider())->register($container);
-        $container->instance(UserProviderInterface::class, new RememberTestProvider($user));
-        $guard = $container->get(Authenticator::class);
-        $guard->login(Identity::fromAuthenticatable($user), $user);
-        $session->put('_auth_remember_token', $user->getRememberToken());
-        $session->put('_auth_remember_id', $user->getAuthIdentifier());
-
-        $middleware = $container->get(RememberCookieMiddleware::class);
-        self::assertInstanceOf(RememberCookieMiddleware::class, $middleware);
-        $response = $middleware->process(new ServerRequest([], [], 'https://example.test/login', 'POST'), $this->handler());
-        self::assertStringContainsString('custom_remember=', $response->getHeaderLine('Set-Cookie'));
-    }
-
     public function testOptInCookieSurvivesSessionLossAndUsesSecureFlags(): void
     {
         self::assertTrue(class_exists(RememberCookieMiddleware::class));

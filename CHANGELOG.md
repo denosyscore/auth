@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.11.0 – 2026-11-12
+
+- **Breaking:** `Denosys\Auth\AuthServiceProvider` moved to the framework as `Denosys\Framework\Providers\AuthServiceProvider`. Packages no longer ship service providers; the framework wires packages together.
+- No longer requires `denosyscore/contracts`.
+
 ## 0.10.0 – 2026-11-12
 
 ### Changed
