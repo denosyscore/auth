@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.21.0 – 2026-11-13
+
+### Changed (breaking)
+
+- `RecordUserProvider` replaces `ModelUserProvider`. It loads users that
+  implement `Record` and `AuthenticatableInterface`, saves remember tokens
+  with `save()`, and writes a rehashed password to the `password` column.
+- The `Authenticatable` trait is removed: it read model attributes.
+  Implement `AuthenticatableInterface` on the record.
+
 ## 0.20.0 – 2026-11-13
 
 - Released with the framework's 0.20 line. Requires its DenoSys dependencies

@@ -241,12 +241,6 @@ parameters:
 			path: src/Auth/Identity/AnonymousIdentity.php
 
 		-
-			message: '#^Trait Denosys\\Auth\\Identity\\Authenticatable is used zero times and is not analysed\.$#'
-			identifier: trait.unused
-			count: 1
-			path: src/Auth/Identity/Authenticatable.php
-
-		-
 			message: '#^Method Denosys\\Auth\\Identity\\Identity\:\:getRoles\(\) should return array\<string\> but returns array\<mixed\>\.$#'
 			identifier: return.type
 			count: 1

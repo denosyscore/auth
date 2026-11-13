@@ -6,6 +6,7 @@ namespace Denosys\Auth\Authentication\Strategy;
 
 use Denosys\Auth\Authentication\Credential\CredentialInterface;
 use Denosys\Auth\Authentication\Credential\PasswordCredential;
+use Denosys\Auth\Authentication\RecordUserProvider;
 use Denosys\Auth\Authentication\Result;
 use Denosys\Auth\Authentication\UserProviderInterface;
 use Denosys\Auth\Identity\Identity;
@@ -59,7 +60,7 @@ class PasswordStrategy implements StrategyInterface
      */
     private function getDefaultIdentifierField(): string
     {
-        if ($this->userProvider instanceof \Denosys\Auth\Authentication\ModelUserProvider) {
+        if ($this->userProvider instanceof RecordUserProvider) {
             return $this->userProvider->getIdentifierField();
         }
 
