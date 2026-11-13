@@ -86,7 +86,7 @@ final class RememberCookieMiddleware implements MiddlewareInterface
                     'password' => sha1($user->getAuthPassword()),
                     'expires' => $expires,
                 ], JSON_THROW_ON_ERROR);
-                $value = rtrim(strtr($this->encrypter->encryptString($payload), '+/', '-_'), '=');
+                $value = rtrim(strtr($this->encrypter->encrypt($payload), '+/', '-_'), '=');
 
                 return $response->withAddedHeader('Set-Cookie', $this->cookieHeader($value, $expires, $request));
             }
@@ -111,7 +111,7 @@ final class RememberCookieMiddleware implements MiddlewareInterface
         try {
             $encoded = strtr($cookie, '-_', '+/');
             $encoded .= str_repeat('=', (4 - strlen($encoded) % 4) % 4);
-            $data = json_decode($this->encrypter->decryptString($encoded), true, flags: JSON_THROW_ON_ERROR);
+            $data = json_decode($this->encrypter->decrypt($encoded), true, flags: JSON_THROW_ON_ERROR);
         } catch (DecryptException|JsonException) {
             return null;
         }

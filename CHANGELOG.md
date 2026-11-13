@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.22.0 – 2026-11-13
+
+- The remember cookie uses the string-only `encrypt()` and `decrypt()` of
+  encryption 0.22. Cookies written by 0.21 still decrypt.
+
 ## 0.21.0 – 2026-11-13
 
 ### Changed (breaking)

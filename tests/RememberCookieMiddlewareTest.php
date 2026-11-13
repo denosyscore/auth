@@ -11,6 +11,8 @@ use Denosys\Auth\Identity\Identity;
 use Denosys\Auth\Middleware\RememberCookieMiddleware;
 use Denosys\Auth\Middleware\RememberCookieOptions;
 use Denosys\Encryption\Encrypter;
+use Denosys\Encryption\Key;
+use Denosys\Encryption\KeyRing;
 use Denosys\Encryption\EncrypterInterface;
 use Denosys\Container\Container;
 use Denosys\Session\SessionInterface;
@@ -36,7 +38,7 @@ final class RememberCookieMiddlewareTest extends TestCase
         $guard->login(Identity::fromAuthenticatable($user), $user);
         $session->put('_auth_remember_token', $user->getRememberToken());
         $session->put('_auth_remember_id', $user->getAuthIdentifier());
-        $encrypter = new Encrypter(base64_encode(random_bytes(32)));
+        $encrypter = new Encrypter(new KeyRing(Key::generate()));
         $options = new RememberCookieOptions(cookieName: 'remember_auth', lifetimeSeconds: 3600);
         $middleware = new RememberCookieMiddleware($guard, $provider, $session, $encrypter, $options);
 
@@ -65,7 +67,7 @@ final class RememberCookieMiddlewareTest extends TestCase
     {
         $user = new RememberTestUser();
         $provider = new RememberTestProvider($user);
-        $encrypter = new Encrypter(base64_encode(random_bytes(32)));
+        $encrypter = new Encrypter(new KeyRing(Key::generate()));
         $options = new RememberCookieOptions();
         $validCookie = $this->cookie($encrypter, $user, time() + 3600);
         $expiredCookie = $this->cookie($encrypter, $user, time() - 1);
@@ -109,7 +111,7 @@ final class RememberCookieMiddlewareTest extends TestCase
         foreach (['logout', 'login'] as $action) {
             $user = new RememberTestUser();
             $provider = new RememberTestProvider($user);
-            $encrypter = new Encrypter(base64_encode(random_bytes(32)));
+            $encrypter = new Encrypter(new KeyRing(Key::generate()));
             $cookie = $this->cookie($encrypter, $user, time() + 3600);
             $session = $this->session();
             $guard = new Authenticator($session, $provider);
@@ -149,7 +151,7 @@ final class RememberCookieMiddlewareTest extends TestCase
             'expires' => $expires,
         ], JSON_THROW_ON_ERROR);
 
-        return rtrim(strtr($encrypter->encryptString($payload), '+/', '-_'), '=');
+        return rtrim(strtr($encrypter->encrypt($payload), '+/', '-_'), '=');
     }
 
     private function handler(): RequestHandlerInterface
